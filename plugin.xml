@@ -19,7 +19,7 @@
 
     <source-file src="src/android/huellero.java" target-dir="src/cl/entel/plugins/huellero" />
 
-    <lib-files src="src/android/lib/classes.jar">
+    <lib-files src="src/android/lib/classes.jar"/>
 
     <resource-file src="src/android/jni/armeabi/libMSO_Secu.so" target="libs/armeabi-v7a/libMSO_Secu.so" />
 		<resource-file src="src/android/jni/armeabi/libMSO100.so" target="libs/armeabi-v7a/libMSO100.so" />
