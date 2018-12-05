@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cl-entel-plugins-huellero" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>huellero</name>
+
+  <js-module name="Huellero" src="www/Huellero.js">
+    <clobbers target="Huellero" />
+  </js-module>
+
+  <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+
+  <platform name="android">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="Huellero">
+        <param name="android-package" value="cl.entel.plugins.huellero.huellero"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/huellero.java" target-dir="src/cl/entel/plugins/huellero" />
+
+    <lib-files src="src/android/lib/classes.jar">
+
+    <resource-file src="src/android/jni/armeabi/libMSO_Secu.so" target="libs/armeabi-v7a/libMSO_Secu.so" />
+		<resource-file src="src/android/jni/armeabi/libMSO100.so" target="libs/armeabi-v7a/libMSO100.so" />
+		<resource-file src="src/android/jni/armeabi/libNativeMorphoSmartSDK_6.20.0.0.so" target="libs/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" />
+		<resource-file src="src/android/jni/armeabi/libZyImgLib.so" target="libs/armeabi-v7a/libZyImgLib.so" />
+
+
+		<resource-file src="src/android/jni/armeabi-v7a/libMSO_Secu.so" target="libs/armeabi-v7a/libMSO_Secu.so" />
+		<resource-file src="src/android/jni/armeabi-v7a/libMSO100.so" target="libs/armeabi-v7a/libMSO100.so" />
+		<resource-file src="src/android/jni/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" target="libs/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" />
+		<resource-file src="src/android/jni/armeabi-v7a/libZyImgLib.so" target="libs/armeabi-v7a/libZyImgLib.so" />
+
+  </platform>
+</plugin>
