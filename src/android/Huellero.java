@@ -47,6 +47,10 @@ public class Huellero extends CordovaPlugin {
                         pluginResult.setKeepCallback(true);
                         callbackContext.sendPluginResult(pluginResult);
                     }
+
+                    @Override
+                    public void onComplete() {
+                    }
         
                     @Override
                     public void onError(ZyResponse obj) {
