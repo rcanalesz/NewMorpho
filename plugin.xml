@@ -3,8 +3,8 @@
 
   <name>huellero</name>
 
-  <js-module name="Huellero" src="www/Huellero.js">
-    <clobbers target="Huellero" />
+  <js-module name="Huellero" src="www/huellero.js">
+    <clobbers target="huellero" />
   </js-module>
 
   <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
