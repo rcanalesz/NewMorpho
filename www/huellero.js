@@ -1,6 +1,6 @@
 var huellero = {
   capturar: function (arg0, success, error) {
-    cordova.exec(success, error, 'huellero', 'capturar', [arg0]);
+    cordova.exec(success, error, 'Huellero', 'capturar', [arg0]);
   }
 }
 
