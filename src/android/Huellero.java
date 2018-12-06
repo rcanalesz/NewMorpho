@@ -36,6 +36,7 @@ public class Huellero extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
         Log.i("HUELLERO", "execute");
+        Context context = cordova.getActivity().getApplicationContext();
         if ("capturar".equals(action)) {
             this.openNewActivity(context);
             return true;
