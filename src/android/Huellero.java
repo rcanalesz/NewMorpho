@@ -33,13 +33,13 @@ public class Huellero extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
         if ("capturar".equals(action)) {
             try {
-                IBioCapture iBioCapture = new BioCapture(this, new IBioCapture.ICallback() {
+                IBioCapture iBioCapture = new BioCapture(this.cordova.getActivity().getApplicationContext(), new IBioCapture.ICallback() {
                             
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
-                        imgFP.setImageBitmap(zyResponse.bm);
+                        this.imgFP.setImageBitmap(zyResponse.bm);
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
-                        imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                        this.imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                         byteArray = byteArrayOutputStream .toByteArray();   
                         
                         String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
@@ -50,6 +50,10 @@ public class Huellero extends CordovaPlugin {
 
                     @Override
                     public void onComplete() {
+                    }
+
+                    @Override
+                    public void onStart() {
                     }
         
                     @Override
