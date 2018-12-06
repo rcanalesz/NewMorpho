@@ -22,7 +22,7 @@ import android.util.Base64;
 public class Huellero extends CordovaPlugin {
 
     private static final String TAG = "ZY_Activity";
-    private Bitmap imgFP;
+    
     private byte[] byteArray;
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -35,6 +35,8 @@ public class Huellero extends CordovaPlugin {
             try {
                 IBioCapture iBioCapture = new BioCapture(this.cordova.getActivity().getApplicationContext(), new IBioCapture.ICallback() {
                             
+                    private Bitmap imgFP;
+                    
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
                         this.imgFP.setImageBitmap(zyResponse.bm);
