@@ -33,6 +33,8 @@ import android.util.Base64;
 
 public class NewActivity extends Activity {
 
+    private byte[] byteArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,6 @@ public class NewActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
         //CallbackContext callbackContext;
-        byte[] byteArray;
 
         /*if(bundle.getString("callbackContext")!= null)
         {
