@@ -37,9 +37,11 @@ public class Huellero extends CordovaPlugin {
                             
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
-                        Bitmap imgFP;
+                        
+                        private Bitmap imgFP;
 
-                        imgFP.setImageBitmap(zyResponse.bm);
+                        imgFP = zyResponse.bm;
+                        
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
                         imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                         byteArray = byteArrayOutputStream .toByteArray();   
