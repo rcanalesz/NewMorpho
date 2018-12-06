@@ -1,17 +1,19 @@
-repositories{
-    jcenter()
-    flatDir{
-        dirs 'libs'
-    }
+repositories{    
+  jcenter()
+  flatDir {
+      dirs 'libs'
+   }
 }
 
-dependencies{
-    compile(name:'zymorpholib_v1-release', ext:'aar')
+
+dependencies {
+   compile(name:'zymorpholib_v1-release', ext:'aar')
 }
 
-android{
-    packagingOptions{
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-    }
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
 }

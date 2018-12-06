@@ -17,26 +17,13 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/huellero.java" target-dir="src/cl/entel/plugins/huellero" />
+    <source-file src="src/android/Huellero.java" target-dir="src/cl/entel/plugins/huellero" />
 
 
 
 
     <framework src="src/android/file.gradle" custom="true" type="gradleReference" />
     
-    <resource-file src="lib/zymorpholib_v1-release.aar" target="libs/zymorpholib_v1-release.aar"/>
-
-
-    <resource-file src="src/android/jni/armeabi/libMSO_Secu.so" target="libs/armeabi-v7a/libMSO_Secu.so" />
-		<resource-file src="src/android/jni/armeabi/libMSO100.so" target="libs/armeabi-v7a/libMSO100.so" />
-		<resource-file src="src/android/jni/armeabi/libNativeMorphoSmartSDK_6.20.0.0.so" target="libs/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" />
-		<resource-file src="src/android/jni/armeabi/libZyImgLib.so" target="libs/armeabi-v7a/libZyImgLib.so" />
-
-
-		<resource-file src="src/android/jni/armeabi-v7a/libMSO_Secu.so" target="libs/armeabi-v7a/libMSO_Secu.so" />
-		<resource-file src="src/android/jni/armeabi-v7a/libMSO100.so" target="libs/armeabi-v7a/libMSO100.so" />
-		<resource-file src="src/android/jni/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" target="libs/armeabi-v7a/libNativeMorphoSmartSDK_6.20.0.0.so" />
-		<resource-file src="src/android/jni/armeabi-v7a/libZyImgLib.so" target="libs/armeabi-v7a/libZyImgLib.so" />
-
+    <resource-file src="aar/zymorpholib_v1-release.aar" target="libs/zymorpholib_v1-release.aar"/>
   </platform>
 </plugin>
