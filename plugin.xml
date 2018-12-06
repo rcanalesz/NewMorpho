@@ -20,10 +20,9 @@
     <source-file src="src/android/Huellero.java" target-dir="src/cl/entel/plugins/huellero" />
 
 
-
-
     <framework src="src/android/file.gradle" custom="true" type="gradleReference" />
     
     <resource-file src="aar/zymorpholib_v1-release.aar" target="libs/zymorpholib_v1-release.aar"/>
+  
   </platform>
 </plugin>
