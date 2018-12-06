@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import com.zy.lib.morpho.ui.BioCapture;
 import com.zy.lib.morpho.ui.IBioCapture;
@@ -31,13 +32,14 @@ public class Huellero extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
+        Log.i("HUELLERO", "execute");
         if ("capturar".equals(action)) {
             try {
                 IBioCapture iBioCapture = new BioCapture(this.cordova.getActivity().getApplicationContext(), new IBioCapture.ICallback() {
                             
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
-                        
+                        Log.i("HUELLERO", "success");
                         Bitmap imgFP;
 
                         imgFP = zyResponse.bm;
@@ -54,6 +56,7 @@ public class Huellero extends CordovaPlugin {
 
                     @Override
                     public void onComplete() {
+                        Log.i("HUELLERO", "complete");
                         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"on complete"+"\"}}");
                         pluginResult.setKeepCallback(true);
                         callbackContext.sendPluginResult(pluginResult);
@@ -61,6 +64,7 @@ public class Huellero extends CordovaPlugin {
 
                     @Override
                     public void onStart() {
+                        Log.i("HUELLERO", "start");
                         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
                         pluginResult.setKeepCallback(true);
                         callbackContext.sendPluginResult(pluginResult);
@@ -68,6 +72,7 @@ public class Huellero extends CordovaPlugin {
         
                     @Override
                     public void onError(ZyResponse obj) {
+                        Log.i("HUELLERO", "error");
                         PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR , obj.deError);
                         callbackContext.sendPluginResult(pluginResult);
                     }
@@ -75,11 +80,13 @@ public class Huellero extends CordovaPlugin {
 
                 return true;
             } catch (Exception e) {
+                Log.i("HUELLERO", "catch");
                 callbackContext.error("Error ejecutando Action: " + e);
                 return false;
             }
         }
         callbackContext.error("No existe metodo: " + action);
+        Log.i("HUELLERO", "error");
         return false;
     }
 
