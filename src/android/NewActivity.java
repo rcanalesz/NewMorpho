@@ -52,11 +52,13 @@ public class NewActivity extends Activity {
         Log.i("NEW_ACTIVITY",package_name);
         setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
 
+        capturar();
+
     }
 
 
-    private void capturar(Context context, CallbackContext callbackContext) {
-
+    private void capturar() {
+        Log.i("HUELLERO", "Starting capture");
         try {
             IBioCapture iBioCapture = new BioCapture(this, new IBioCapture.ICallback() {
                         
