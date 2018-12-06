@@ -39,13 +39,14 @@ public class NewActivity extends Activity {
         String package_name = getApplication().getPackageName();
 
         Bundle bundle = getIntent().getExtras();
-        CallbackContext callbackContext;
+        //CallbackContext callbackContext;
         byte[] byteArray;
 
-        if(bundle.getString("callbackContext")!= null)
+        /*if(bundle.getString("callbackContext")!= null)
         {
+            callbackContext = bundle.getString("callbackContext");
             Log.i("NEW_ACTIVITY","Got callback context");
-        }
+        }*/
 
         Log.i("NEW_ACTIVITY",package_name);
         setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
@@ -68,7 +69,7 @@ public class NewActivity extends Activity {
                     String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+encoded+"\"}}");
                     pluginResult.setKeepCallback(true);
-                    callbackContext.sendPluginResult(pluginResult);
+                    //callbackContext.sendPluginResult(pluginResult);
                 }
 
                 @Override
@@ -76,7 +77,7 @@ public class NewActivity extends Activity {
                     Log.i("HUELLERO", "complete");
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"on complete"+"\"}}");
                     pluginResult.setKeepCallback(true);
-                    callbackContext.sendPluginResult(pluginResult);
+                    //callbackContext.sendPluginResult(pluginResult);
                 }
 
                 @Override
@@ -84,14 +85,14 @@ public class NewActivity extends Activity {
                     Log.i("HUELLERO", "start");
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
                     pluginResult.setKeepCallback(true);
-                    callbackContext.sendPluginResult(pluginResult);
+                    //callbackContext.sendPluginResult(pluginResult);
                 }
     
                 @Override
                 public void onError(ZyResponse obj) {
                     Log.i("HUELLERO", "error");
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR , obj.deError);
-                    callbackContext.sendPluginResult(pluginResult);
+                    //callbackContext.sendPluginResult(pluginResult);
                 }
 
             });
@@ -103,7 +104,7 @@ public class NewActivity extends Activity {
             //return true;
         } catch (Exception e) {
             Log.i("HUELLERO", "catch");
-            callbackContext.error("Error ejecutando Action: " + e);
+            //callbackContext.error("Error ejecutando Action: " + e);
             //return false;
         }
 

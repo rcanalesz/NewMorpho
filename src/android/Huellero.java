@@ -48,7 +48,7 @@ public class Huellero extends CordovaPlugin {
 
     private void openNewActivity(Context context, CallbackContext callbackContext) {
         Intent intent = new Intent(context, NewActivity.class);
-        intent.putExtra("callbackContext", callbackContext);
+        //intent.putExtra("callbackContext", callbackContext);
 
         this.cordova.getActivity().startActivity(intent);
     }
