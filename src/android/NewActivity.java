@@ -40,7 +40,7 @@ public class NewActivity extends Activity {
         super.onCreate(savedInstanceState);
         String package_name = getApplication().getPackageName();
 
-        Bundle bundle = getIntent().getExtras();
+        //Bundle bundle = getIntent().getExtras();
         //CallbackContext callbackContext;
 
         /*if(bundle.getString("callbackContext")!= null)
@@ -52,6 +52,10 @@ public class NewActivity extends Activity {
         Log.i("NEW_ACTIVITY",package_name);
         setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
 
+    }
+
+
+    private void capturar(Context context, CallbackContext callbackContext) {
 
         try {
             IBioCapture iBioCapture = new BioCapture(this, new IBioCapture.ICallback() {
@@ -108,22 +112,7 @@ public class NewActivity extends Activity {
             //callbackContext.error("Error ejecutando Action: " + e);
             //return false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
     }
 }
 
