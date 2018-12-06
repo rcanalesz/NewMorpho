@@ -36,12 +36,12 @@ public class Huellero extends CordovaPlugin {
                 IBioCapture iBioCapture = new BioCapture(this.cordova.getActivity().getApplicationContext(), new IBioCapture.ICallback() {
                             
                     private Bitmap imgFP;
-                    
+
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
-                        this.imgFP.setImageBitmap(zyResponse.bm);
+                        imgFP.setImageBitmap(zyResponse.bm);
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
-                        this.imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                        imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                         byteArray = byteArrayOutputStream .toByteArray();   
                         
                         String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
