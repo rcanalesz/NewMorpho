@@ -99,6 +99,7 @@ public class NewActivity extends Activity {
                 public void onError(ZyResponse obj) {
                     Log.i("HUELLERO", "error");
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR , obj.deError);
+                    Log.i("HUELLERO", obj.deError);
                     //callbackContext.sendPluginResult(pluginResult);
                 }
 
