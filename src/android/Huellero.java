@@ -63,18 +63,30 @@ public class Huellero extends CordovaPlugin {
     @Override
     public  void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        Log.i("HUELLERO", "Activity Result");
+
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
+
+                Log.i("HUELLERO", "Activity Result OK");
+
                 String result=data.getStringExtra("result");
 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+result+"\"}}");
+                
+                Log.i("HUELLERO", result);
+
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, result);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
 
-
             }
             if (resultCode == Activity.RESULT_CANCELED) {
+
+                Log.i("HUELLERO", "Activity Result FAIL");
+
                 String error =data.getStringExtra("error");
+
+                Log.i("HUELLERO", error);
 
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
                 callbackContext.sendPluginResult(pluginResult);
