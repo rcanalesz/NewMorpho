@@ -40,10 +40,11 @@ public class NewActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
         CallbackContext callbackContext;
+        byte[] byteArray;
 
         if(bundle.getString("callbackContext")!= null)
         {
-            Log.i("Got callback context");
+            Log.i("NEW_ACTIVITY","Got callback context");
         }
 
         Log.i("NEW_ACTIVITY",package_name);
@@ -99,11 +100,11 @@ public class NewActivity extends Activity {
             iBioCapture.capturar(zyRequest);
 
 
-            return true;
+            //return true;
         } catch (Exception e) {
             Log.i("HUELLERO", "catch");
             callbackContext.error("Error ejecutando Action: " + e);
-            return false;
+            //return false;
         }
 
 

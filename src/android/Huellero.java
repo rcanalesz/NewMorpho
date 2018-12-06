@@ -38,7 +38,7 @@ public class Huellero extends CordovaPlugin {
         Log.i("HUELLERO", "execute");
         Context context = cordova.getActivity().getApplicationContext();
         if ("capturar".equals(action)) {
-            this.openNewActivity(context);
+            this.openNewActivity(context, callbackContext);
             return true;
         }
         callbackContext.error("No existe metodo: " + action);
@@ -46,7 +46,7 @@ public class Huellero extends CordovaPlugin {
         return false;
     }
 
-    private void openNewActivity(Context context) {
+    private void openNewActivity(Context context, CallbackContext callbackContext) {
         Intent intent = new Intent(context, NewActivity.class);
         intent.putExtra("callbackContext", callbackContext);
 
