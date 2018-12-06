@@ -17,6 +17,9 @@ import com.zy.lib.morpho.ui.IBioCapture;
 import com.zy.lib.morpho.ui.ZyRequest;
 import com.zy.lib.morpho.ui.ZyResponse;
 
+import android.content.Context;
+import android.content.Intent;
+
 import java.io.ByteArrayOutputStream;
 import android.util.Base64;
 
