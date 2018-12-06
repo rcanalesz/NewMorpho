@@ -13,7 +13,7 @@
 
     <config-file target="config.xml" parent="/*">
       <feature name="Huellero">
-        <param name="android-package" value="cl.entel.plugins.huellero.huellero"/>
+        <param name="android-package" value="cl.entel.plugins.huellero.Huellero"/>
       </feature>
     </config-file>
 
