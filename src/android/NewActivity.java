@@ -74,9 +74,12 @@ public class NewActivity extends Activity {
                     byteArray = byteArrayOutputStream .toByteArray();   
                     
                     String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                    PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+encoded+"\"}}");
-                    pluginResult.setKeepCallback(true);
-                    //callbackContext.sendPluginResult(pluginResult);
+
+
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("result",encoded);
+                    setResult(Activity.RESULT_OK,returnIntent);
+                    finish();
                 }
 
                 @Override
@@ -97,10 +100,16 @@ public class NewActivity extends Activity {
     
                 @Override
                 public void onError(ZyResponse obj) {
+                
                     Log.i("HUELLERO", "error");
-                    PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR , obj.deError);
                     Log.i("HUELLERO", obj.deError);
-                    //callbackContext.sendPluginResult(pluginResult);
+
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("error",obj.deError);
+                    setResult(Activity.RESULT_CANCELED,returnIntent);
+                    finish();
+
+                    
                 }
 
             });
