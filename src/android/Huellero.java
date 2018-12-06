@@ -35,7 +35,7 @@ public class Huellero extends CordovaPlugin {
         Log.i("HUELLERO", "execute");
         if ("capturar".equals(action)) {
             try {
-                IBioCapture iBioCapture = new BioCapture(this.cordova.getActivity().getApplicationContext(), new IBioCapture.ICallback() {
+                IBioCapture iBioCapture = new BioCapture(this, new IBioCapture.ICallback() {
                             
                     @Override
                     public void onSuccess(ZyResponse zyResponse) {
