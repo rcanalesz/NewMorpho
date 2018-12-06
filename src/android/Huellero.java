@@ -54,10 +54,16 @@ public class Huellero extends CordovaPlugin {
 
                     @Override
                     public void onComplete() {
+                        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"on complete"+"\"}}");
+                        pluginResult.setKeepCallback(true);
+                        callbackContext.sendPluginResult(pluginResult);
                     }
 
                     @Override
                     public void onStart() {
+                        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
+                        pluginResult.setKeepCallback(true);
+                        callbackContext.sendPluginResult(pluginResult);
                     }
         
                     @Override
