@@ -76,7 +76,12 @@ public class Huellero extends CordovaPlugin {
                         PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR , obj.deError);
                         callbackContext.sendPluginResult(pluginResult);
                     }
+
                 });
+
+                ZyRequest zyRequest = new ZyRequest();
+                iBioCapture.capturar(zyRequest);
+
 
                 return true;
             } catch (Exception e) {
