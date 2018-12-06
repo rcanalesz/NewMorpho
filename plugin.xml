@@ -17,7 +17,13 @@
       </feature>
     </config-file>
 
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity android:label="New Activity" android:name="cl.entel.plugins.huellero.NewActivity"></activity>
+    </config-file>
+
     <source-file src="src/android/Huellero.java" target-dir="src/cl/entel/plugins/huellero" />
+    <source-file src="src/android/NewActivity.java" target-dir="src/cl/entel/plugins/huellero" />
+    <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
 
 
     <framework src="src/android/file.gradle" custom="true" type="gradleReference" />
