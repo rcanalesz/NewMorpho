@@ -20,12 +20,21 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="77dp" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.30"
-        android:onClick="capturar"
-        android:textSize="12dp"
-        android:text="Capturar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30"
+            android:onClick="capturar"
+            android:text="Capturar"
+            android:textSize="12dp" />
+
+    </LinearLayout>
 </LinearLayout>
 
