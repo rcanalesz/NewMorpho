@@ -76,7 +76,7 @@ public class Huellero extends CordovaPlugin {
                 //int bytes = b.getWidth()*b.getHeight()*4; 
 
                 ByteBuffer buffer = ByteBuffer.allocate(bytes); //Create a new buffer
-                b.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
+                resultBm.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
 
                 byte[] array = buffer.array(); //Get the underlying array containing the data.
 
