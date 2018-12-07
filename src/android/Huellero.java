@@ -33,11 +33,6 @@ public class Huellero extends CordovaPlugin {
     private byte[] byteArray;
 
     private CallbackContext callbackContext = null;
-
-    private Boolean booleanResult = false;
-
-    private String encoded;
-    private String error;
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -57,16 +52,7 @@ public class Huellero extends CordovaPlugin {
             Intent intent = new Intent(context, NewActivity.class);
             this.cordova.getActivity().startActivityForResult(intent, 1);
 
-            if(booleanResult){
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
-                pluginResult.setKeepCallback(true);
-                callbackContext.sendPluginResult(pluginResult);
-            }else{
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
-                callbackContext.sendPluginResult(pluginResult);
-            }
-
-            return booleanResult;
+            return true;
         }
         callbackContext.error("No existe metodo: " + action);
         Log.i("HUELLERO", "error");
@@ -94,29 +80,29 @@ public class Huellero extends CordovaPlugin {
                 resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byteArray = byteArrayOutputStream .toByteArray();   
                     
-                encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
                 if(encoded != null){
                     Log.i("HUELLERO", "got b64");
                 }
                 Log.i("HUELLERO", encoded);
 
-                booleanResult = true;
-
                 
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
+                pluginResult.setKeepCallback(true);
+                callbackContext.sendPluginResult(pluginResult);
 
             }
             if (resultCode == Activity.RESULT_CANCELED) {
 
                 Log.i("HUELLERO", "Activity Result FAIL");
 
-                error =data.getStringExtra("error");
+                String error =data.getStringExtra("error");
 
                 Log.i("HUELLERO", error);
 
-                booleanResult = false;
-
-                
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
+                callbackContext.sendPluginResult(pluginResult);
             }
         }
     }//onActivityResult
