@@ -1,8 +1,6 @@
 android {
     defaultConfig {
         applicationId "com.outsystemsenterprise.entel.PEMayorista"
-        minSdkVersion 16
-        targetSdkVersion 27
     }
 
    packagingOptions {
