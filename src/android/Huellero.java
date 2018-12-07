@@ -33,6 +33,8 @@ public class Huellero extends CordovaPlugin {
     private byte[] byteArray;
 
     private CallbackContext callbackContext = null;
+
+    private booleanResult = false;
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -52,7 +54,7 @@ public class Huellero extends CordovaPlugin {
             Intent intent = new Intent(context, NewActivity.class);
             this.cordova.getActivity().startActivityForResult(intent, 1);
 
-            return true;
+            return booleanResult;
         }
         callbackContext.error("No existe metodo: " + action);
         Log.i("HUELLERO", "error");
@@ -87,7 +89,8 @@ public class Huellero extends CordovaPlugin {
                 }
                 Log.i("HUELLERO", encoded);
 
-                
+                booleanResult = true;
+
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
@@ -100,6 +103,8 @@ public class Huellero extends CordovaPlugin {
                 String error =data.getStringExtra("error");
 
                 Log.i("HUELLERO", error);
+
+                booleanResult = false;
 
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
                 callbackContext.sendPluginResult(pluginResult);
