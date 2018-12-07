@@ -3,7 +3,8 @@ repositories{
   jcenter()
   flatDir {
       dirs 'src/main/libs'
-  }
+   }
+   
   flatDir {
     dirs 'libs'
   }
@@ -11,11 +12,8 @@ repositories{
 
 
 dependencies {
-   internalDebugImplementation  (name:'zymorpholib_v1-release', ext:'aar')
-   internalReleaseImplementation(name:'zymorpholib_v1-release', ext:'aar')
-   externalDebugImplementation  (name:'zymorpholib_v1-release', ext:'aar')
-   externalReleaseImplementation(name:'zymorpholib_v1-release', ext:'aar')
-  }
+   implementation(name:'zymorpholib_v1-release', ext:'aar')
+}
 
 
 android {
