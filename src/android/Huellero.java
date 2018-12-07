@@ -71,11 +71,18 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i("HUELLERO", "Activity Result OK");
 
-                Bitmap result = data.getParcelableExtra("result");
+                Bitmap resultBm = data.getParcelableExtra("result");
                
                 //convert bitmap
+
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
+                resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                byteArray = byteArrayOutputStream .toByteArray();   
+                    
+                String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, result);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
 
