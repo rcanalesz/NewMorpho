@@ -37,7 +37,7 @@ public class Huellero extends CordovaPlugin {
     private Boolean booleanResult = false;
 
     private String encoded;
-    private String error
+    private String error;
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
