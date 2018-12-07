@@ -54,6 +54,15 @@ public class Huellero extends CordovaPlugin {
             Intent intent = new Intent(context, NewActivity.class);
             this.cordova.getActivity().startActivityForResult(intent, 1);
 
+            if(booleanResult){
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
+                pluginResult.setKeepCallback(true);
+                callbackContext.sendPluginResult(pluginResult);
+            }else{
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
+                callbackContext.sendPluginResult(pluginResult);
+            }
+
             return booleanResult;
         }
         callbackContext.error("No existe metodo: " + action);
@@ -91,9 +100,7 @@ public class Huellero extends CordovaPlugin {
 
                 booleanResult = true;
 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
-                pluginResult.setKeepCallback(true);
-                callbackContext.sendPluginResult(pluginResult);
+                
 
             }
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -106,8 +113,7 @@ public class Huellero extends CordovaPlugin {
 
                 booleanResult = false;
 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
-                callbackContext.sendPluginResult(pluginResult);
+                
             }
         }
     }//onActivityResult
