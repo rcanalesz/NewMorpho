@@ -16,6 +16,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
+
 import android.util.Base64;
 
 public class Huellero extends CordovaPlugin {
@@ -63,15 +65,30 @@ public class Huellero extends CordovaPlugin {
 
                 Bitmap resultBm = data.getParcelableExtra("result");
 
-                Log.i(TAG, "converting to B64");               
+                Log.i(TAG, "converting to B64 new");               
+
+
+
+                //b is the Bitmap
+                //calculate how many bytes our image consists of.
+                int bytes = resultBm.getByteCount();
+                //or we can calculate bytes this way. Use a different value than 4 if you don't use 32bit images.
+                //int bytes = b.getWidth()*b.getHeight()*4; 
+
+                ByteBuffer buffer = ByteBuffer.allocate(bytes); //Create a new buffer
+                b.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
+
+                byte[] array = buffer.array(); //Get the underlying array containing the data.
+
+                /*
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
                 resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-                byteArray = byteArrayOutputStream .toByteArray();   
+                byteArray = byteArrayOutputStream .toByteArray(); */  
                     
-                String encoded = encode(byteArray);
+                String encoded = encode(array);
 
                 if(encoded != null){
-                    Log.i(TAG, "got b64");
+                    Log.i(TAG, "got b64 new");
                     Log.i(TAG, encoded);
                 }
 
