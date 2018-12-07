@@ -76,7 +76,7 @@ public class Huellero extends CordovaPlugin {
                 Log.i("HUELLERO", "converting to b64");
                
                 //convert bitmap
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
+                /*ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
                 resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byteArray = byteArrayOutputStream .toByteArray();   
                     
@@ -85,10 +85,10 @@ public class Huellero extends CordovaPlugin {
                 if(encoded != null){
                     Log.i("HUELLERO", "got b64");
                 }
-                Log.i("HUELLERO", encoded);
+                Log.i("HUELLERO", encoded);*/
 
                 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, S);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
 
