@@ -70,9 +70,13 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i("HUELLERO", "Activity Result OK");
 
-                String result=data.getStringExtra("result");
+                Bundle bundle = data.getExtras();
+                String result = "empty";
+                if (bundle != null) {
+                    result = bundle.getString("result");
+                    Log.i("HUELLERO", "Is bundle");
+                }
 
-                
                 Log.i("HUELLERO", result);
 
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, result);

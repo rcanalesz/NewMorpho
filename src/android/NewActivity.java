@@ -49,7 +49,7 @@ public class NewActivity extends Activity {
             Log.i("NEW_ACTIVITY","Got callback context");
         }*/
 
-        Log.i("NEW_ACTIVITY",package_name);
+        Log.i("HUELLERO",package_name);
         setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
 
         capturar();
