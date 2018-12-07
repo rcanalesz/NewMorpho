@@ -8,7 +8,7 @@ repositories{
 
 
 dependencies {
-   compile(name:'zymorpholib_v1-release', ext:'aar')
+   implementation ":zymorpholib_v1-release@aar"
 }
 
 
