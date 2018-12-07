@@ -34,7 +34,7 @@ public class Huellero extends CordovaPlugin {
 
     private CallbackContext callbackContext = null;
 
-    private booleanResult = false;
+    private Boolean booleanResult = false;
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
