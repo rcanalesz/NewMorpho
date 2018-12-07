@@ -35,6 +35,9 @@ public class Huellero extends CordovaPlugin {
     private CallbackContext callbackContext = null;
 
     private Boolean booleanResult = false;
+
+    private String encoded;
+    private String error
     
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -91,7 +94,7 @@ public class Huellero extends CordovaPlugin {
                 resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byteArray = byteArrayOutputStream .toByteArray();   
                     
-                String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
                 if(encoded != null){
                     Log.i("HUELLERO", "got b64");
@@ -107,7 +110,7 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i("HUELLERO", "Activity Result FAIL");
 
-                String error =data.getStringExtra("error");
+                error =data.getStringExtra("error");
 
                 Log.i("HUELLERO", error);
 
