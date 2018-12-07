@@ -71,15 +71,10 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i("HUELLERO", "Activity Result OK");
 
-                Bundle bundle = data.getExtras();
-                String result = "empty";
-                if (bundle != null) {
-                    result = bundle.getString("result");
-                    Log.i("HUELLERO", "Is bundle");
-                }
-
-                Log.i("HUELLERO", result);
-
+                Bitmap result = data.getParcelableExtra("result");
+               
+                //convert bitmap
+                
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, result);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);

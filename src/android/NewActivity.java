@@ -69,15 +69,15 @@ public class NewActivity extends Activity {
 
                     imgFP = zyResponse.bm;
 
-                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
+                    /*ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
                     imgFP.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                     byteArray = byteArrayOutputStream .toByteArray();   
                     
-                    String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                    String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);*/
 
 
                     Intent returnIntent = new Intent();
-                    returnIntent.putExtra("result",encoded);
+                    returnIntent.putExtra("result",imgFP);
                     setResult(Activity.RESULT_OK,returnIntent);
                     finish();
                 }
