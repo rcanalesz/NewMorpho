@@ -88,7 +88,7 @@ public class Huellero extends CordovaPlugin {
                 Log.i("HUELLERO", encoded);*/
 
                 
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, S);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, resultBm);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
 
