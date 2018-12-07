@@ -77,7 +77,7 @@ public class Huellero extends CordovaPlugin {
                
                 //convert bitmap
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
-                resultBm.compress(Bitmap.CompressFormat.PNG, 10, byteArrayOutputStream);
+                resultBm.compress(Bitmap.CompressFormat.JPG, 10, byteArrayOutputStream);
                 byteArray = byteArrayOutputStream .toByteArray();   
                     
                 String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
