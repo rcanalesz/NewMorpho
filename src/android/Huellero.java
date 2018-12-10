@@ -60,32 +60,6 @@ public class Huellero extends CordovaPlugin {
 
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
-
-
-                //BITMAP
-/*
-                Log.i(TAG, "Activity Result OK");
-                Bitmap resultBm = data.getParcelableExtra("result");
-
-                Log.i(TAG, "converting to B64 new");               
-
-
-
-                //b is the Bitmap
-                //calculate how many bytes our image consists of.
-                int bytes = resultBm.getByteCount();
-                //or we can calculate bytes this way. Use a different value than 4 if you don't use 32bit images.
-                //int bytes = b.getWidth()*b.getHeight()*4; 
-                ByteBuffer buffer = ByteBuffer.allocate(bytes); //Create a new buffer
-                resultBm.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
-                byte[] array = buffer.array(); //Get the underlying array containing the data.
-                /*
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
-                resultBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-                byteArray = byteArrayOutputStream .toByteArray(); */  
-
-
-
                 //BYTE ARRAY
 
                 Log.i(TAG, "Activity Result OK");
@@ -93,10 +67,6 @@ public class Huellero extends CordovaPlugin {
                 byte[] array = data.getByteArrayExtra("result");
 
                 Log.i(TAG, "converting to B64 new");      
-
-
-
-
                     
                 String encoded = encode(array);
 
@@ -105,7 +75,6 @@ public class Huellero extends CordovaPlugin {
                     Log.i(TAG, encoded);
                 }
 
-                
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
                 
                 callbackContext.sendPluginResult(pluginResult);
@@ -120,6 +89,7 @@ public class Huellero extends CordovaPlugin {
                 Log.i(TAG, error);
 
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
+                pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
             }
         }
