@@ -63,7 +63,7 @@ public class Huellero extends CordovaPlugin {
 
 
                 //BITMAP
-
+/*
                 Log.i(TAG, "Activity Result OK");
                 Bitmap resultBm = data.getParcelableExtra("result");
 
