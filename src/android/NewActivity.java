@@ -5,6 +5,7 @@ import android.util.Log;
 import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Bitmap;
+import android.view.Window;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
