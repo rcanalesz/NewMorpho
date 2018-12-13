@@ -1,3 +1,5 @@
+useDeprecatedNdk=true
+
 android {
     defaultConfig {
         applicationId "com.outsystemsenterprise.entel.PEMayorista"
@@ -8,7 +10,7 @@ android {
     }
 
 
-    useDeprecatedNdk=true
+    
    
 
    packagingOptions {
