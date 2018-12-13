@@ -7,6 +7,8 @@ android {
         }
     }
 
+
+    useDeprecatedNdk=trueS
    
 
    packagingOptions {
@@ -14,5 +16,3 @@ android {
        exclude 'META-INF/LICENSE'
    }
 }
-
-android.useDeprecatedNdk=true
