@@ -1,17 +1,7 @@
-useDeprecatedNdk=true
-
 android {
     defaultConfig {
         applicationId "com.outsystemsenterprise.entel.PEMayorista"
-
-        ndk {
-            abiFilters "armeabi-v7a", "x86", "armeabi", "mips"
-        }
     }
-
-
-    
-   
 
    packagingOptions {
        exclude 'META-INF/NOTICE'

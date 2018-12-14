@@ -28,15 +28,20 @@ public class Huellero extends CordovaPlugin {
 
     private CallbackContext callbackContext = null;
     
+    //FIJO
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
     }
+
+
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext newCallbackContext) {
         Log.i(TAG, "execute");
 
         Context context = cordova.getActivity().getApplicationContext();
+
+
         if ("capturar".equals(action)) {
             callbackContext = newCallbackContext;
             cordova.setActivityResultCallback (this);
@@ -46,6 +51,10 @@ public class Huellero extends CordovaPlugin {
 
             return true;
         }
+
+
+
+
         callbackContext.error("No existe metodo: " + action);
         Log.i(TAG, "error");
         return false;
