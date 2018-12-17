@@ -1,6 +1,10 @@
 android {
     defaultConfig {
         applicationId "com.outsystemsenterprise.entel.PEMayorista"
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
     }
 
    packagingOptions {
