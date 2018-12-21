@@ -92,7 +92,10 @@ public class Huellero extends CordovaPlugin {
                 }
 
                 Log.i(TAG, error);
+            
 
+                Log.i(TAG, "changed");
+                
                 if(callbackContext == null){
                     Log.i(TAG, "callbackContext is null");
                     return;
