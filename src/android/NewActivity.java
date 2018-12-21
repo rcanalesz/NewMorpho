@@ -62,9 +62,19 @@ public class NewActivity extends Activity {
 
                 @Override
                 public void onStart() {
-                    Log.i(TAG, "Start");
-                    PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
-                    pluginResult.setKeepCallback(true);                    
+
+                    try {
+                        Log.i(TAG, "Start");
+                        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
+                        pluginResult.setKeepCallback(true); 
+                    }catch()(Exception e) {
+                        Log.i(TAG, "Error on start");
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("error",e.getMessage());
+                        setResult(Activity.RESULT_CANCELED,returnIntent);
+                        finish();                    
+                    }
+
                 }
     
                 @Override
