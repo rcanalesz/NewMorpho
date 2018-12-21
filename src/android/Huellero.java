@@ -88,7 +88,7 @@ public class Huellero extends CordovaPlugin {
                 if(data != null){
                     error =data.getStringExtra("error");
                 }else{
-                    error = "Error en el huellero"
+                    error = "Error en el huellero";
                 }
 
                 Log.i(TAG, error);
