@@ -67,7 +67,7 @@ public class NewActivity extends Activity {
                         Log.i(TAG, "Start");
                         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,"{\"bitmap\":\""+"onstart"+"\"}}");
                         pluginResult.setKeepCallback(true); 
-                    }catch()(Exception e) {
+                    }catch(Exception e) {
                         Log.i(TAG, "Error on start");
                         Intent returnIntent = new Intent();
                         returnIntent.putExtra("error",e.getMessage());
