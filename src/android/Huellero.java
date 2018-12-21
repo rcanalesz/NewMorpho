@@ -84,7 +84,12 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i(TAG, "Activity Result FAILED");
 
-                String error =data.getStringExtra("error");
+                String error = "";
+                if(data != null){
+                    error =data.getStringExtra("error");
+                }else{
+                    error = "Error en el huellero"
+                }
 
                 Log.i(TAG, error);
 
