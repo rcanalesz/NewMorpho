@@ -94,10 +94,14 @@ public class Huellero extends CordovaPlugin {
                 Log.i(TAG, error);
 
                 if(callbackContext == null){
-                    callbackContext = new CallbackContext();
+                    CallbackContext myCallbackContext = new CallbackContext();
+                    PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
+                    myCallbackContext.sendPluginResult(pluginResult);
+                }else{
+                    PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
+                    callbackContext.sendPluginResult(pluginResult);
                 }
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, error);
-                callbackContext.sendPluginResult(pluginResult);
+                
             }
         }
     }//onActivityResult
