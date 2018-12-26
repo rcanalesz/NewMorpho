@@ -20,6 +20,9 @@ import java.nio.ByteBuffer;
 
 import android.util.Base64;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class Huellero extends CordovaPlugin {
 
     private static final String TAG = "HUELLERO";
