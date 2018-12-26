@@ -20,6 +20,11 @@ import com.zy.lib.morpho.ui.ZyResponse;
 import android.content.Context;
 import android.content.Intent;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+
 
 public class NewActivity extends Activity {
 
@@ -51,7 +56,7 @@ public class NewActivity extends Activity {
 
 
                     ByteArrayOutputStream bStream = new ByteArrayOutputStream();//
-                    bm.compress(Bitmap.CompressFormat.PNG, 100, bStream);//
+                    imgBm.compress(Bitmap.CompressFormat.PNG, 100, bStream);//
                     byte[] bminArray = bStream.toByteArray();//
 
 
