@@ -44,11 +44,25 @@ public class NewActivity extends Activity {
                     Log.i(TAG, "Success");
                     //Bitmap imgFP;
                     byte[] imgFP;
+                    Bitmap imgBm;//
 
                     imgFP = zyResponse.wsq;
+                    imgBm = zyResponse.bm;//
+
+
+                    ByteArrayOutputStream bStream = new ByteArrayOutputStream();//
+                    bm.compress(Bitmap.CompressFormat.PNG, 100, bStream);//
+                    byte[] bminArray = bStream.toByteArray();//
+
+
+
+
+
+
 
                     Intent returnIntent = new Intent();
-                    returnIntent.putExtra("result",imgFP);
+                    returnIntent.putExtra("result",imgFP);                    
+                    returnIntent.putExtra("bitmapres",bminArray);//
                     setResult(Activity.RESULT_OK,returnIntent);
                     finish();
                 }
