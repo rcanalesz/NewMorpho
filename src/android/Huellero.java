@@ -20,9 +20,6 @@ import java.nio.ByteBuffer;
 
 import android.util.Base64;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 public class Huellero extends CordovaPlugin {
 
     private static final String TAG = "HUELLERO";
@@ -67,46 +64,20 @@ public class Huellero extends CordovaPlugin {
 
                 Log.i(TAG, "Activity Result OK");
                    
-                byte[] array = data.getByteArrayExtra("result");                
-                byte[] bmarray = data.getByteArrayExtra("bitmapres");//
+                byte[] array = data.getByteArrayExtra("result");
 
                 Log.i(TAG, "converting to B64 new");      
                     
                 String encoded = encode(array);
-                String bmEnconded = encode(bmarray);
 
                 if(encoded != null){
                     Log.i(TAG, "got b64 new");
                     Log.i(TAG, encoded);
                 }
 
-
-
-
-
-
-
-                try {
-                    JSONObject json = new JSONObject(); 
-                    json.put("imageBase64", bmEnconded);
-                    json.put("wsqBase64", encoded);
-
-                    String message = json.toString();
-
-                    Log.i(TAG,"message: "+message);                
-
-                    PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, message );            
-                    callbackContext.sendPluginResult(pluginResult);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-
-                    Log.i(TAG, "RESULT OF SCAN STATUS - FAILED");
-                    PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, "Error on image JSON");
-                    callbackContext.sendPluginResult(pluginResult);
-                }
-
-
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, encoded);
+                
+                callbackContext.sendPluginResult(pluginResult);
 
             }
             if (resultCode == Activity.RESULT_CANCELED) {
